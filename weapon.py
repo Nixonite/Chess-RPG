@@ -3,18 +3,21 @@ class Weapon:
 		self._attack = 1
 		self._size = 1
 	
-	@property
-	def attack(self):
+	
+	def get_attack(self):
 		return self._attack
 	
-	@attack.setter
-	def attack(self, value):
+	
+	def set_attack(self, value):
 		self._attack = value
 	
-	@property
-	def size(self);
+	
+	def get_size(self);
 		return self._size
 	
-	@size.setter
-	def size(self, value):
+	
+	def set_size(self, value):
 		self._size = value
+
+	size = property(get_size, set_size)
+	attack = property(get_attack, set_attack)

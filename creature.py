@@ -5,27 +5,30 @@ class Creature:
 		self._defense = 6
 		self._attack = 6
 	
-	@property
-	def health(self):
+	
+	def get_health(self):
 		return self._health
 	
-	@health.setter
-	def health(self, value):
+	
+	def set_health(self, value):
 		self._health = value
 	
-	@property
-	def defense(self):
+	
+	def get_defense(self):
 		return self._defense
 	
-	@property
-	def attack(self):
+	
+	def get_attack(self):
 		return self._attack
 	
-	@attack.setter
-	def attack(self, value):
+	
+	def set_attack(self, value):
 		self._attack = value
 	
-	@defense.setter
-	def defense(self, value);
+	
+	def set_defense(self, value);
 		self._defense = value
 	
+	defense = property(get_defense, set_defense)
+	attack = property(get_attack, set_attack)
+	health = property(get_health, set_health)

@@ -18,10 +18,10 @@ transition_matrix = {
 		self._map.add_node("Room")
 		for e in range(size):
 			
-	@property
-	def map(self):
+	
+	def get_map(self):
 		return self._map
 	
-	@map.setter
-	def map(self, value):
+	
+	def set_map(self, value):
 		self._map = value

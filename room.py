@@ -6,29 +6,32 @@ class Room:
 		self._height = 1
 		self._color = 'White'
 	
-	@property
-	def width(self):
+	def get_width(self):
 		return self._width
 	
-	@property
-	def height(self):
+	
+	def get_height(self):
 		return self._height
 	
-	@property
-	def color(self);
+	
+	def get_color(self);
 		return self._color
 	
-	@color.setter
-	def color(self, value):
+	
+	def set_color(self, value):
 		self._color = value
 	
-	@width.setter
-	def width(self, value):
+	
+	def set_width(self, value):
 		self._width = value
 	
-	@height.setter
-	def height(self, value):
+	
+	def set_height(self, value):
 		self._height = value
 		
 	def get_area(self):
 		return self._width * self._height
+	
+	color = property(get_color, set_color)
+	height = property(get_height, set_height)
+	width = property(get_width, set_width)
