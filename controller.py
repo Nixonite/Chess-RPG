@@ -19,13 +19,21 @@ class Controller:
 		win = curses.newwin(self._height, self._width, begin_y, begin_x)
 	
 	def print_str(self, x, y, value):
-		self._stdscr.addstr(y, x, value)
+		self._stdscr.addstr(x, y, value.encode('utf_8'))
 	
 	def erase(self):
 		self._stdscr.erase()
 	
 	def printc(self, value):
-		self._stdscr.addstr(3, 3, value)
+		self.print_str(3, 3, value)
+		self.refresh()
+		self.waitKey()
+		self.erase()
+	
+	def print_rows(self, rows_list, start_row = 5):
+		rows_list = [x for x in rows_list]
+		for row in range(start_row, start_row+len(rows_list)):
+			self.print_str(row, 3, rows_list[row-start_row])
 		self.refresh()
 		self.waitKey()
 		self.erase()

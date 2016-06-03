@@ -11,11 +11,14 @@ with open("story.json") as story_file:
 	story = json.load(story_file)
 
 glb = Controller()
+
 Board = UniChess()
+Board.setup_board()
 
 for line in story['Introduction']:
-	glb.printc((uni_chess_pieces['wN']+' '+line).encode('utf_8'))
+	glb.printc(uni_chess_pieces['wN']+' '+line)
 
-glb.printc(Board.board)
+glb.print_str(3, 1, uni_chess_pieces['wN']+" This is a fucking chess board")
+glb.print_rows(Board.board)
 
 glb.quit()
